@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.sofittasktranformer.model.TranFormerListDataModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_6sdp"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_user_icon"
+                style="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                imageUrl="@{model.iconUrl}"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{model.name}"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintBottom_toTopOf="@id/tv_rank"
+                app:layout_constraintEnd_toStartOf="@id/iv_edit"
+                app:layout_constraintStart_toEndOf="@id/iv_user_icon"
+                app:layout_constraintTop_toTopOf="@id/iv_user_icon"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Team"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_rank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{model.rank}"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user_icon"
+                app:layout_constraintEnd_toStartOf="@id/iv_delete"
+                app:layout_constraintStart_toEndOf="@id/iv_user_icon"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                tools:text="Team" />
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintBottom_toTopOf="@id/iv_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:translationZ="@dimen/_6sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_edit" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

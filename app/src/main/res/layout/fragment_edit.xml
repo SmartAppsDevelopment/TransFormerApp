@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:padding="18dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_avatarimg"
+            style="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_100sdp"
+            android:translationZ="@dimen/_24sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatarimg">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/layoutlinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/filledTextField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtv_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@android:color/transparent" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <include
+                            android:id="@+id/team"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/strength"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/intelligence"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/speed"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/endurance"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/rank"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/courage"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/firepower"
+                            layout="@layout/team_rank_item" />
+
+                        <include
+                            android:id="@+id/skill"
+                            layout="@layout/team_rank_item" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btndel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_18sdp"
+                            android:singleLine="true"
+                            android:text="Save"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

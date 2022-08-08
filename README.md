@@ -22,7 +22,8 @@ App SS4|
 :--:|
 <img src="images/4.jpg"  width="350px"  height="550px"/>|
 
-
+# ToDO 
+if you have existing token then provide it in ConstantsMembers class otherwise it will download the new token from server and then use it 
 ## Api Implemented 
 * [Transformer Api](https://transformers-api.firebaseapp.com/api-docs/)
 ## Get Bearer Token perform GET PUT POST DELETE Ops on Transformer

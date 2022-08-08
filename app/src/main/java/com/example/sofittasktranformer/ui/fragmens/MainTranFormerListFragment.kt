@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import androidx.navigation.fragment.findNavController
 import com.example.sofittasktranformer.R
 import com.example.sofittasktranformer.adapter.TranformerListFragmentAdapter
@@ -46,12 +45,14 @@ class MainTranFormerListFragment :
             dir.dataModel = null
             findNavController().navigate(dir)
         }
-        loadData()
+        lifecycleScope.launch {
+            loadData()
+        }
     }
 
-    private fun loadData() {
+    private suspend fun loadData() {
 
-        viewModel.viewModelScope.launch {
+        viewLifecycleOwner.lifecycle.whenCreated{
             viewModel.transformerData.collect {
 
                 when (it) {

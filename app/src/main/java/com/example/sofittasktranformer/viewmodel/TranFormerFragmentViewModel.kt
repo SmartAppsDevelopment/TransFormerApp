@@ -42,8 +42,9 @@ class TranFormerFragmentViewModel @Inject constructor(
             val finddata = it.filter {
                 it.id.equals(id)
             }
-            if (finddata.isNotEmpty())
+            if (finddata.isNotEmpty()) {
                 dataStateFlow.emit(ViewUiStates.GetUserDataForUpdate(finddata))
+            }
         }
 
     }

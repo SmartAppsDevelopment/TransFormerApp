@@ -89,9 +89,9 @@ class DataRepoImpl @Inject constructor(
 
     override suspend fun getOrRequestNewBearerToken() = flow {
 
-        if(com.example.sofittasktranformer.BuildConfig.DEBUG){
-            preferences.putPreference(ConstantsMembers.SharedPrefKeys.BEARER_TOKEN, ConstantsMembers.DEFAULT_TOKEN)
-        }
+//        if(com.example.sofittasktranformer.BuildConfig.DEBUG){
+//            preferences.putPreference(ConstantsMembers.SharedPrefKeys.BEARER_TOKEN, ConstantsMembers.DEFAULT_TOKEN)
+//        }
         val prefToken = preferences.getPreference(ConstantsMembers.SharedPrefKeys.BEARER_TOKEN, "")
             .firstOrNull()
         if (prefToken.isNullOrEmpty()) {
@@ -101,7 +101,7 @@ class DataRepoImpl @Inject constructor(
                     emit(requestApi)
                     preferences.putPreference(
                         ConstantsMembers.SharedPrefKeys.BEARER_TOKEN,
-                        requestApi
+                        "Bearer $requestApi"
                     )
                 } else {
                     emit(null)
